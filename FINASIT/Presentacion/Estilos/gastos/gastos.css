@@ -1,0 +1,600 @@
+button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+button:hover {
+    background-color: #247BA0;
+}
+/*Principal*/
+#Principal {
+    position: static;
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+
+#modelsChart{
+    display: flex;
+}
+
+/* Gastos */
+
+#boxGastos {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+
+    text-align: center;
+}
+
+#imgGastos {
+    position: static;
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+#boxTextInfoGastos {
+    /*La informacion bajo imgGastos*/
+    padding: 0 2rem 2rem 2rem;
+    display: flex;
+    position: relative;
+    margin-top: 2rem;
+    font-size: 2.2rem;
+    background-color: #ffffff00;
+    flex-direction: column;
+    width: 70%;
+    min-width: 15rem;
+}
+#mesGasto{
+    background-color:rgb(189, 186, 186) ;
+}
+
+/* Visualuzacion */
+#contenedor {
+    width: 80%;
+    border-radius: 8%;
+    overflow: hidden;
+}
+
+#cabezaCalendario {
+    padding: 1rem;
+    padding-right: 2rem;
+    color: #494747;
+    background-color: #e3e6e9;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#weekdays {
+    width: 100%;
+    display: flex;
+    color: #d5d7d8;
+    background-color: rgb(114, 91, 177);
+}
+
+#weekdays div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: calc(100%/7);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: background-color 0.2s;
+}
+
+#weekdays div:hover {
+    background: #7d80b4;
+}
+
+#calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /*   Los elementos flexibles se envuelven en líneas adicionales según sea necesario para ajustarse al contenedor segun chatgpt xd*/
+}
+
+.day {
+    width: calc(100%/7);
+    height: 5rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0px 0px 3px #d0d6ca;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    transition: background-color 0.5s;
+}
+
+.day:hover {
+    transform: scale(1.08);
+    background-color: #e4e3e3;
+    transition: transform 0.5s;
+    transition: background-color 0.7s;
+}
+
+.day #currentDay {
+    background-color: #c9dfeb;
+}
+
+/* MODAL Y LAS OPCIONES CON LOS GASTOS*/
+
+#modalGastos {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    z-index: 20;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px black;
+    border-radius: 5px;
+    width: 60%;
+    height: 35em;
+    top: 10rem;
+}
+
+#modalBackDrop {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    /* es como un porcentaje maso, solo tapa la pantalla*/
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#cancelButton {
+    background-color: #76daa3;
+}
+
+#setGasto {
+    position: relative;
+    height: 10em;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    margin-top: 1em;
+}
+
+#izquierdoModal {
+    position: relative;
+    padding: 0.2em;
+    background-color: #297fb900;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+}
+
+#centroModal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-width: thin;
+    border-style: solid;
+    border-color: #cab;
+}
+#iniCM{
+    z-index: 10;
+    position: absolute;
+    display:block;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #7d80b4;
+}
+
+#derechaModal {
+    position: relative;
+    background-color: rgba(36, 123, 160, 0.007);
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    padding: 1em;
+}
+
+.tipoGasto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /*Para posicionarlo en la mitad*/
+    justify-content: center;
+    align-items: center;
+    height: 10em;
+    transition: scale 0.25s;
+}
+
+.spanTipo {
+    position: relative;
+    height: 60%;
+}
+
+.spanTipo img {
+    height: 100%;
+}
+
+.tipoGasto:hover {
+    scale: 1.1;
+}
+
+.tipoGasto p {
+    margin-top: 10px;
+}
+
+/* Ahora la parte que esta dentro del box importante*/
+
+#meterItems {
+    position: relative;
+    display: flex;
+    width: 95%;
+    flex-direction: column-reverse;
+}
+
+
+#addItem {
+    display: flex;
+    height: 100%;
+    background-color: #c9dfeb;
+    justify-self: center;
+    align-items: center;
+}
+
+#addItem>img {
+    width: 6%;
+    margin-right: 40%;
+    padding-left: 0.5rem;
+}
+
+#addItem:hover {
+    background-color: #b0b5f3;
+}
+
+/* Mirando*/
+.newItem {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+}
+
+.ppI {
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+}
+.ppI input{
+    height: 50%;
+}
+
+.ppI button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newItem .inputItem {
+    margin: 1%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#bontonAceptar,
+#botonModificar,
+#botonEliminar {
+    margin: 1% 0;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#bontonAceptar:hover,
+#botonModificar:hover,
+#botonEliminar:hover {
+    background-color: #2980b9;
+}
+
+/*el div que reemplaza a un input*/
+.divReemplazo {
+    margin: auto;
+}
+
+.inputItem {
+    display: flex;
+    width: 30%;
+    margin: auto;
+    margin-right: 1%;
+}
+
+/*Botones que sirven para guardar o cancelar */
+#BI {
+    position: absolute;
+    direction: rtl;
+    bottom: 1em;
+    right: 1em;
+}
+
+/*Eventos que estan por dentro de los dias */
+.event {
+    font-size: 10px;
+    background-color: #58bae4;
+    color: white;
+    border-radius: 2px;
+    max-height: 2rem;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Aqui estara la parte de selector de Gastos en el que ubicaremos el rango de la fecha*/
+#mainAbajo{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+#tabla{
+    padding-left:5%;
+    width: 60%;
+
+}
+.gridjs-th{
+    width: 33%; /*esto es el ancho de las celdas*/
+}
+#fechasContent {
+    position: relative;
+    display: flexbox;
+    right: 0;
+    min-height: 20%;
+    margin-top: 1rem;
+}
+#selectorGastos {
+    position: static;
+    display: flex;
+    margin: 1rem;
+}
+
+
+.formFecha {
+    display: block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.formInput {
+    padding: 3%;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1.21rem;
+    margin-bottom: 1rem;
+}
+
+#gastoCalcular {
+    font-size: 1.2rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: auto;
+}
+
+#gastoCalcular:hover {
+    background-color: #2980b9;
+}
+
+/* Ahora la parte de configuracion del periodo*/
+
+#configuracionPeriodo {
+    display: block;
+    margin: 0rem;
+    margin-top: 5rem;
+    height: auto;
+    background: #cab;
+}
+
+#boxConfiguracion {
+    margin: auto;
+    width: 100%;
+    height: auto;
+    grid-column-start: 1;
+}
+
+#titleBotones {
+    position: static;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+}
+
+#boxBotones {
+    position: static;
+    display: grid;
+    margin: auto;
+    width: 75%;
+    background-color: #e1dee4;
+    grid-template-rows: repeat(3, 3rem);
+}
+
+.botonConfiguracion {
+    position: static;
+    height: 100%;
+    display: flex;
+    background-color: #cab;
+}
+
+.botonConfiguracion:hover {
+    background-color: #ebcca9;
+
+}
+
+.botonConfiguracion>p {
+    margin: auto;
+}
+
+#apartadoConfiguracion {
+    width: 100%;
+    display: block;
+    padding: 1rem;
+}
+
+/*Parte de opciones para añadir una fecha como tal*/
+
+#aliD,
+#entreD,
+#transD,
+#mercD,
+#otroD {
+    display: none;
+}
+/* Extra sobre los centro e cadena*/
+.empresa{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.centrosDeCadena{
+    appearance: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color:#2980b9;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: background-color 0.5s;
+}
+.centrosDeCadena:hover{
+    background-color: #b47d3f;
+}
+.contenedorC {
+    position: absolute;
+    top:5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.marca{
+    appearance: none;
+    background-color: #dfc3ab;
+    color: #000000;
+    position: relative;
+    z-index: 10;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2rem;
+}
+
+
+/*Parte para los celulares o con menos de 800 px*/
+@media only screen and (max-width: 1170px) {
+    #Principal {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #boxGastos {
+        width: 80%;
+        display: flex;
+        align-items: center;
+    }
+
+    #contenedor {
+        width: 80%;
+    }
+
+    #weekdays {
+        width: 100%;
+    }
+
+    #weekdays>div {
+        padding: 0;
+        position: static;
+        width: calc(100%/6);
+        padding-bottom: 1rem;
+        line-height: 1;
+        align-items: center;
+        margin: auto;
+
+    }
+
+    #weekdays>div::first-letter {
+        font-size: inherit;
+        float: left;
+        font-weight: bold;
+    }
+
+    #calendar {
+        margin-bottom: 1rem;
+    }
+
+    .letraInvisible {
+        display: none;
+        visibility: hidden;
+    }
+
+    #modalGastos {
+        position: absolute;
+        display: none;
+        z-index: 20;
+        padding: 2rem;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 3px black;
+        border-radius: 5px;
+        width: 60%;
+        top: 30%;
+        left: 10%;
+        font-family: sans-serif;
+    }
+
+    #modalBackDrop {
+        position: fixed;
+        display: none;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}

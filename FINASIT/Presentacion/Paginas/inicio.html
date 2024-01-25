@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../Estilos/global/global.css" id="estiloG">
+    <link rel="stylesheet" href="../Estilos/Inicio/inicio.css">
+    <link rel="stylesheet" href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" />
+</head>
+<body>
+    <header id="headerContainer">
+      <script src="../Scritps/1.js"></script>
+    </header>    
+    <main>
+      <div id="perfil">
+        Perfil
+      </div>
+      <div id="cerrarSesion">
+        Cerrar
+      </div>
+      <div id="Titulo">
+        <h1> BIENVENIDO <span id="nombreSpan"></span>, QUE GUSTO VERLE POR AQUI</h1>
+      </div>
+
+      <section class="datos">
+        <div class="apartado ingresosGraficaApartado"> 
+          <canvas id="ingresosGrafica"></canvas>
+          <span>Grafica que refleja el comportamiento de los Ingresos en el año</span>
+        </div>
+        <div class="apartado gastosGraficaApartado">
+          <canvas id="gastosGrafica"></canvas>
+          <span>Grafica que refleja el comportamiento de los gastos en el año</span>
+          </canvas>
+        </div>
+        <div id="tortaGM" class="GM">
+          <canvas id="gastoMayor"></canvas>
+        </div>
+        <div id="tortaIM" class="GM">
+          <canvas id="ingresoMayor"></canvas>
+        </div>
+      </section>
+      <section class="informacion">
+            <div id="tablaGI"></div>
+      </section>
+    </main>
+
+    <div id="sombra"></div>
+    <div id="modalPerfil">
+      <div id = "contendorBotonCerrar"><button class="cerrarModal" id="cerrarModal">Cerrar</button>
+      </div>
+      <div id="perfilContenedor">
+        <div id="imagenPerfil"><img src="#" alt="Imagen/img"></div>
+        <div id="datosPerfil">
+          <span>Nombre: <span id="nombrePerfil"></span></span>
+          <span>Apellido: <span id="apellidoPerfil"></span></span>
+          <span>Edad: <span id="edadPerfil"></span></span>
+        </div>
+      </div>
+      <button class = "botonModal" id="modificarDatos">Modificar</button>
+    </div>
+      <!-- Div del modificar-->
+      <div class="form">
+        <p class="title">Registro </p>
+            <div class="nombres">
+            <label>
+                <input placeholder="" type="text" class="input" name="nombreEnvio">
+                <span>Nombre</span>
+            </label>
+
+            <label>
+                <input placeholder="" type="text" class="input" name="apellidoEnvio">
+                <span>Apellido</span>
+            </label>
+        </div>              
+        <label>
+            <input placeholder="" type="number" class="input" name="edadEnvio">
+            <span>Edad</span>
+        </label>
+        <button class="btnModificar" type="submit">Aceptar</button>
+      </div> 
+
+
+
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../Scritps/1Clases.js"></script>
+    <script src="../Scritps/Inicio.js"></script>
+    <script src="../Scritps/inicioGraficos.js"></script>
+  </body>
+</html>

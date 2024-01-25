@@ -1,0 +1,374 @@
+#perfil{
+    transition: height 0.2s;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:-2px;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 0 0rem 1rem 1rem;
+    margin:0%;
+    background-color: rgb(233, 229, 171);
+    cursor:pointer;
+}
+#cerrarSesion{
+    position: absolute;
+    display: flex;
+    top:0;
+    right: 0;
+    background-color: rgb(219, 120, 120);
+    padding: 1rem;
+    cursor: pointer;
+}
+#cerrarSesion:hover{
+    background-color: rgb(219, 98, 98);
+
+}
+
+
+#Titulo{
+    margin-top: 5rem;
+}
+
+#perfil:hover {
+    transition: height 0.2s;
+    height: 5rem;
+}
+
+.datos{
+    margin-top: 5rem;
+    padding: 3rem;
+    background-color: rgb(212, 225, 240);
+    position: relative;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-areas:
+    "objeto1 gastoMayor"
+    "objeto2 ingresoMayor";
+    gap: 1rem;
+    width: 65%;
+    min-width: 55rem;
+    max-width: 80rem;
+
+}
+.ingresoGraficaApartado{
+    grid-area: objeto1;
+}
+.gastosGraficaApartado {
+    grid-area: objeto2;
+
+}
+#tortaGM{
+    grid-area: gastoMayor;
+}
+#tortaIM{
+    grid-area: ingresoMayor;
+}
+.GM{
+    margin: auto;
+}
+#nombreSpan{
+    text-transform: uppercase;
+}
+.apartado {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(243, 243, 243);
+    padding: 1rem;
+    min-width: 25rem;
+    max-width: 40rem;
+}
+
+.apartado span {
+    margin-top: 2rem;
+    justify-content: left;
+}
+
+
+.l-logo svg {
+    width: 80%;
+}
+
+
+.informacion{
+    position: relative;
+    width: 80%;
+    display: flex;
+    margin-bottom: 5em;
+    justify-content: center;
+}
+#sombra{
+    position: absolute;
+    visibility:hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 89, 128, 0.418);
+    z-index: 1;
+}
+
+#modalPerfil{
+    border-radius: 5%;
+    z-index: 10;
+    visibility: hidden;
+    position: absolute;
+    height: 80%;
+    width: 50%;
+    max-width: 40rem;
+    min-width: 5rem;
+    background-color: #e0d4d4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contendorBotonCerrar{
+    position: relative;
+    display: flex;
+    direction: rtl;
+    width: 100%;
+}
+.cerrarModal{
+    font-weight: 550;
+    font-size: 100%;
+    color:#ffffff;
+    padding: 15px 40px 15px 40px;
+    background-color:#f2595e;
+    border-color: #F69DA1;
+    border-width: 3px;
+    border-style: solid;
+    margin: 1em;
+    right: 0;
+    cursor: pointer;
+    transition: scale 0.2s;
+}
+#cerrarModal:hover{
+    scale:1.1;
+}
+
+.cerrar{
+    animation: cerrarModal 0.3s ease-out forwards;
+    
+}
+.abrir {
+    animation: abrirModal 0.3s ease-out forwards;
+}
+@keyframes cerrarModal {
+    0%{
+        width: 50%;
+        height: 80%;
+        visibility: visible;
+    }
+    50%{
+        display: none;
+        visibility: hidden;
+    }
+    100%{
+        width: 10%;
+        height: 10%;
+        display:none;
+
+    }
+}
+@keyframes abrirModal {
+    0%{
+        width: 10%;
+        height: 10%;
+
+    }
+    100%{
+        width: 50%;
+        height: 80%;
+        visibility:visible;
+    }
+
+}
+ /*Parte del modal*/
+
+#perfilContenedor{
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background-color: #e7e5e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#imagenPerfil{
+    position: relative;
+    top: 0;
+    width: 80%;
+    height: 50%;
+}
+#datosPerfil{
+    font-weight: bold;
+    margin: 1rem;;
+    padding: 1rem;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#datosPerfil span {
+    margin: 1rem;
+    color: rgb(42, 61, 165);
+}
+.botonModal {
+    display:inline-block;
+    margin:1.2em;
+    padding:1rem;
+    background: rgb(143, 143, 143);
+    width:20%;
+    text-align: center;
+    color:white;
+    font-size: 100%;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    box-shadow: -5px 1px 3px 0px rgb(214, 179, 165);
+    cursor: pointer;
+    border-radius: 10px 30px;
+}
+.botonModal:hover{
+    background: rgb(182, 187, 182);
+    color:rgb(31, 31, 31);
+    box-shadow:none;
+    border-radius: 10px;
+}
+/* Configuracion modal para la configuracion xd*/
+.form {
+    z-index: 20;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position:absolute;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .title::before,.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .message, .signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a {
+    color: royalblue;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline royalblue;
+  }
+  
+  .nombres {
+    display: flex;
+    width: 100%;
+    gap: 7px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 90%;
+    padding: 1rem 0.5rem 1rem 1rem;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: green;
+  }
+  
+  .btnModificar {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+  .btnModificar:hover {
+    background-color: rgb(56, 90, 194);
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Estilos/global/global.css" id="estiloG">
+    <link rel="stylesheet" href="../Estilos/gastos/gastos.css">
+    <link rel="stylesheet" href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" />
+    <title>Gastos</title>
+</head>
+<body>
+    <header id="headerContainer"></header>
+    <main>
+        <div id="Principal">
+                <!-- primera division de las 3 que hare, 3 divs, uno en donde encierre los gastos-->
+            <div id ="boxGastos">
+                <div id = "boxTextInfoGastos">
+                    <span id="mesGasto">
+                    </span>
+                    <span id="cantGasto">
+                    </span>
+                    <canvas id="modelsChart">
+                    </canvas>
+                </div>
+            </div>
+                <!-- Segunda division sobre como son los tipos de gastos donde puedes añadir o no-->
+            <div id="contenedor">
+                <div id="cabezaCalendario">
+                <div id = "monthDisplay"> </div>
+                <div>
+                    <button id="backButton"> Atras </button>
+                    <button id="nextButton"> Adelante </button>
+                </div>
+                </div>
+                <div id="weekdays">
+                <div>D<span class="letraInvisible">omingo</span></div>
+                <div>L<span class="letraInvisible">unes</span></div>
+                <div>M<span class="letraInvisible">artes</span></div>
+                <div>M<span class="letraInvisible">iercoles</span></div>
+                <div>J<span class="letraInvisible">ueves</span></div>
+                <div>V<span class="letraInvisible">iernes</span></div>
+                <div>S<span class="letraInvisible">abado</span></div>
+                </div>
+        
+                <div id="calendar"></div> <!-- Aqui es donde va los dias-->
+        
+            </div>
+        </div>    
+        <!-- Aqui la parte de abajo xd -->      
+        <div id="mainAbajo">
+            <div id="tabla"></div>
+            <div id="fechasContent">
+                <label class="formFecha">Fecha de inicio:</label>
+                <input type="date" id="startDate" class="formInput">  
+                <label class="formFecha">Fecha final:</label>
+                <input type="date" id="endDate" class="formInput"> 
+                <button id="gastoCalcular">Calcular Gasto</button>
+                <div id = "mostrarGasto"> </div>
+            </div>
+        </div>
+    </main>
+        <!-- aparte -->
+        <div id="modalBackDrop"></div>    
+        <div id="modalGastos" > 
+            <h2> Gastos Individuales</h2>
+            <div id = "setGasto">  <!-- Aqui seteamos el tipo de gasto que queremos -->
+                <div id="izquierdoModal">
+                    <div id = "Alimentos" class = "tipoGasto" onclick="tabHidde('meterItems',this)" ><span class="spanTipo"> <img src="../../Persistencia/Imagenes/Gastos/rowAlimentos.svg" alt=""></span><p>Alimento</p></div>
+                    <!-- otro -->
+                    <div id = "Entretenimiento" class = "tipoGasto" onclick="tabHidde('meterItems',this)"><span class="spanTipo"> <img src="../../Persistencia/Imagenes/Gastos/rowEntretenimiento.svg" alt=""></span><p>Entretenimiento</p></div>
+                    <!--Otro-->
+                    <div id = "Transporte"class = "tipoGasto" onclick="tabHidde('meterItems',this)"><span class="spanTipo"> <img src="../../Persistencia/Imagenes/Gastos/rowTransporte.svg" alt=""></span><p>Transporte</p></div>
+                </div>
+                <div id="centroModal">
+                    <div id="iniCM"></div>
+                    <div id = "meterItems">
+                        <div id = "addItem"> <img src="../../Persistencia/Imagenes/Gastos/addItem.svg" alt=""> <span>Añadir</span></div>
+                    </div>
+                </div>
+                
+                <div id="derechaModal">
+                    <div id = "Mercado"class = "tipoGasto" onclick="tabHidde('meterItems',this)"><span class="spanTipo"> <img src="../../Persistencia/Imagenes/Gastos/rowMercado.svg" alt=""></span><p>Mercado</p></div>
+                    <!--Otro-->
+                    <div id = "Otros" class = "tipoGasto" onclick="tabHidde('meterItems',this)"><span class="spanTipo"> <img src="../../Persistencia/Imagenes/Gastos/rowOtros.svg" alt=""></span><p>Otros</p></div>
+                </div>
+            </div>
+            <div id = "BI"> 
+            <!--<button id = "saveButton">Guardar </button>-->
+            <button id = "cancelButton">Aceptar</button>
+            </div>
+        </div>
+    
+   <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="../Scritps/1.js"></script> <!-- Este y el de abajo son para las clases e iniciales del sistema--> 
+    <script src="../Scritps/1Clases.js"></script>
+    <script src="../Scritps/gastosTipos.js"></script><!-- Este es uno que ayudara a gastos calendario-->
+    <script src="../Scritps/gastosCalendario.js"></script> 
+    <script src="../Scritps/gastos.js"></script> <!--Son extra de los gastos-->
+</body>
+</html>

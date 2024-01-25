@@ -1,0 +1,178 @@
+main{
+    top:5rem;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; /* Margen entre columnas */
+    margin: 1rem;
+}
+
+/* Estilos para la sección izquierda */
+.section-left {
+    text-align: center;
+}
+
+.centered {
+    text-align: center;
+}
+
+#ingresosConstantes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.IC {
+    position: relative;
+    display: flex;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+    gap:0.5rem;
+    cursor:context-menu;
+}
+.IC:hover{
+    background-color: #ccc;
+}
+.nombreIC{
+    position: relative;
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+.tiempoIC{
+    position: relative;
+    display: flex;
+    width: 30%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.valorIC{
+    position: relative;
+    display: flex;
+    width: 20%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.aceptar{
+    position: relative;
+    width: 30%;
+    margin:0.5rem;
+}
+#newIC{
+    background-color: #4c6baf;
+    color: #fff;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    gap: 5rem;
+}
+#newIC:hover{
+    background-color: #6178ac;
+}
+#newIC i {
+    right: 0;
+}
+
+/* Estilos para la sección central (formulario y lista de ingresos) */
+.section-center {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario {
+    background-color: #f0f0f0;
+    padding: 2rem; /* Relleno interno del formulario */
+    border-radius: 1.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem; /* Márgenes inferiores del formulario */
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+#income-amount{
+    position: relative;
+    width: 100%;
+}
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilos para la lista de ingresos */
+#lista-ingresos {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem; /* Márgenes inferiores de la lista de ingresos */
+}
+
+#income-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem; /* Márgenes superiores de la tabla de ingresos */
+}
+
+#income-table th, #income-table td {
+    border: 0.1rem solid #ddd;
+    padding: 1rem;
+    text-align: left;
+}
+
+/* Estilos para la sección derecha */
+.section-right {
+    text-align: center;
+}
+
+.date-container {
+    background-color: #f0f0f0;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem; /* Márgenes inferiores de la sección derecha */
+}
+
+/* Estilos para la imagen en la sección izquierda */
+img[alt="imgIngresos"] {
+    border-radius: 50%;
+    margin-bottom: 1rem; /* Márgenes inferiores de la imagen en la sección izquierda */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}

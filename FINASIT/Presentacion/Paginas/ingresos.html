@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Estilos/global/global.css" id="estiloG">
+    <link rel="stylesheet" href="../Estilos/ingresos/ingresos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" />
+    <title>Ingresos</title>
+</head>
+<body>
+    <header id="headerContainer">
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <section class="section-left">
+                <div class="date-container">
+                    
+                    <div class="input-container">
+                        <label for="income-date">Fecha de Ingreso:</label>
+                        <input type="date" id="income-date" required>
+                    </div>
+                </div>
+            </section>
+            <section class="section-center">
+                <div class="formulario">
+                    <h2>Registrar Ingresos</h2>
+                    <div class="input-container">
+                        <label for="income-amount">Monto:</label>
+                        <input type="number" id="income-amount" placeholder="Ingrese el monto" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="income-type">Tipo de Ingreso:</label>
+                        <select id="income-type">
+                            <option value="salario">Salario</option>
+                            <option value="honorarios">Honorarios</option>
+                            <option value="donaciones">Donaciones</option>
+                            <option value="ventas">Ventas</option>
+                        </select>
+                    </div>
+                
+                    <button id="add-income">Agregar Ingreso</button>
+                </div>
+                <div id="tablaIngresos"></div>
+            </section>
+            <section class="section-right">
+                
+            </section>
+        </div>
+    </main>
+    
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script src="../Scritps/1.js"></script>
+    <script src="../Scritps/1Clases.js"></script>
+    <script src="../Scritps/ingresos.js"></script>
+
+</body>
+</html>
